@@ -1,0 +1,419 @@
+{
+  "$schema": "./site.schema.json",
+  "profile": {
+    "name": "Omar Ismail",
+    "initials": "OI",
+    "role": "R&D / Product Development",
+    "tagline": "Product Development / Mechanical R&D Engineer",
+    "footerTagline": "Built around evidence.",
+    "email": "",
+    "phone": "",
+    "whatsapp": "",
+    "linkedIn": "",
+    "cvUrl": "",
+    "portrait": "hero-portrait.svg",
+    "portraitAlt": "Omar Ismail, Product Development and Mechanical R&D Engineer",
+    "portraitBadge": "50+ builds"
+  },
+  "nav": [
+    { "label": "Work", "href": "#work", "mobileLabel": "Selected work" },
+    { "label": "Proof", "href": "#proof", "mobileLabel": "Evidence" },
+    { "label": "Challenge", "href": "#game", "mobileLabel": "Engineering challenge" },
+    { "label": "About", "href": "#about" },
+    { "label": "CV ↓", "href": "#contact", "mobileLabel": "Download CV ↓" }
+  ],
+  "hero": {
+    "eyebrow": "Product Development / Mechanical R&D Engineer",
+    "headline": "I turn rough ideas into machines that work.",
+    "lead": "7+ years turning requirements into working hardware. 50+ client-funded systems engineered and delivered from requirements through build, test, and handover.",
+    "primaryCta": "See the engineering",
+    "secondaryCta": "Download CV",
+    "proofStats": [
+      { "value": "50+", "label": "client-funded prototypes" },
+      { "value": "≈300", "label": "units in one product line" },
+      { "value": "250,000", "label": "test cycles on one research machine" }
+    ],
+    "floatingNotes": [
+      { "label": "SHOWING", "value": "Top 5 projects" },
+      { "label": "VIEWING", "value": "Product Development" }
+    ],
+    "footerLine": "Design → drawings → workshop → tested machine → handover"
+  },
+  "deliveryStrip": {
+    "label": "Selected delivery context",
+    "clients": [
+      "Pulsar / Si-Ware",
+      "EBank",
+      "University systems · Oman",
+      "Products exported · Gulf & Europe"
+    ]
+  },
+  "impact": {
+    "kicker": "Proof before promises",
+    "title": "Engineering output you can count.",
+    "description": "No company-wide claims. Only systems I directly led or engineered with the MARS-Z team, and the results they produced.",
+    "stats": [
+      {
+        "value": 50,
+        "suffix": "+",
+        "label": "Client-funded machines and prototypes I directly engineered or led through delivery with the MARS-Z team"
+      },
+      {
+        "value": 300,
+        "prefix": "≈",
+        "label": "Units manufactured after I led the move from prototype into repeatable production"
+      },
+      {
+        "value": 250000,
+        "label": "Test cycles run by a research rig I engineered for a published dental study"
+      },
+      {
+        "value": 90,
+        "suffix": "%",
+        "label": "Cheaper than commercial insulin pumps — my M.Sc. device, published by IEEE"
+      }
+    ]
+  },
+  "featuredProjectId": "rate-table",
+  "work": {
+    "kicker": "Most relevant work first",
+    "title": "Built, tested, delivered.",
+    "description": "The closest match to this role comes first. Open any card for the full story.",
+    "libraryKicker": "More engineering range",
+    "libraryTitle": "Six more systems, built the same way.",
+    "libraryCount": "12 projects in total"
+  },
+  "projects": {
+    "rate-table": {
+      "title": "High-precision Inertial Rate Table",
+      "category": "Motion Control · Robotics · Test Equipment",
+      "hook": "A table that turns at a rate you can trust, so a gyroscope can be judged against it.",
+      "challenge": "Deliver steady, programmable rotation across a wide speed range, while keeping the machine easy to service and practical to build.",
+      "work": "Led the mechanism, drivetrain, sensing, control integration, fabrication coordination, and iterative validation. Combined mechanical refinement with encoder feedback and repeatable test routines.",
+      "result": "Client-side analysis measured 32.8 ppmFS encoder-to-command nonlinearity over a ±300 dps sweep. The final client-run session also demonstrated sinusoidal motion up to 15 Hz at 400 dps peak.",
+      "metric": "32.8 ppmFS nonlinearity",
+      "tags": ["Precision mechanics", "Motion control", "Validation"],
+      "image": "rt-real-1.svg",
+      "alt": "Custom inertial rate table test equipment",
+      "gallery": ["rt-real-1.svg", "rt-real-2.svg", "rt-render.svg"],
+      "placement": "card",
+      "cad": "https://a360.co/43Qv1gf"
+    },
+    "sensory": {
+      "title": "Visual Sensory Learning Product Line",
+      "category": "Product Development · DFM · Manufacturing",
+      "hook": "From a custom device to a repeatable product line.",
+      "challenge": "Create a robust, engaging sensory product that could be manufactured repeatedly, maintained easily, and supplied at meaningful volume.",
+      "work": "Led product iteration, mechanical/electrical integration, fabrication methods, assembly improvements, test checks, and coordination with the permanent engineering and technician team.",
+      "result": "Around 300 cumulative units delivered for one client product line; the client exports units to Gulf and European markets.",
+      "metric": "≈300 units",
+      "tags": ["Productization", "DFM / DFA", "Team delivery"],
+      "image": "sensory-learning-panel.svg",
+      "alt": "Manufactured sensory learning device",
+      "gallery": ["sensory-learning-panel.svg"],
+      "placement": "card"
+    },
+    "chewing": {
+      "title": "Chewing Simulator",
+      "category": "Research Equipment · Mechanism Design",
+      "hook": "A rig that has to chew for months without drifting.",
+      "challenge": "Reproduce chewing motion and load over hundreds of thousands of cycles, in water held at body temperature, without losing alignment or accuracy along the way.",
+      "work": "2040 aluminium extrusion frame for rigidity and modular assembly. The Z-axis runs on a NEMA 23 stepper and ballscrew, guided by linear rods and carrying up to 15 kg per head to apply controlled force on the samples.",
+      "result": "The rig ran the thermomechanical ageing for a published dental study: 48 prepared molars across three restorative groups, 250,000 mechanical cycles with 1,000 thermal cycles running simultaneously.",
+      "metric": "250,000 cycles",
+      "tags": ["Mechanism design", "Experimental rigs", "Reliability"],
+      "image": "chewing-simulator.svg",
+      "alt": "Custom chewing simulator research rig",
+      "gallery": ["chewing-simulator.svg"],
+      "placement": "card"
+    },
+    "ventilator": {
+      "title": "Emergency Ventilator Prototype",
+      "category": "Rapid R&D · Mechanical / Flow Systems",
+      "hook": "A rapid-response prototype developed under urgent constraints.",
+      "challenge": "Translate clinical and airflow needs into a buildable mechanism while managing safety, repeatability, and limited development time.",
+      "work": "Supported mechanical architecture, airflow-path development, CAD, fabrication, control integration, and physical iteration.",
+      "result": "A functional engineering prototype used to explore the design space; not represented as a certified medical device.",
+      "metric": "Working prototype",
+      "tags": ["Rapid prototyping", "Flow systems", "Test iteration"],
+      "image": "ventilator-real-2.svg",
+      "alt": "Emergency ventilator engineering prototype",
+      "gallery": ["ventilator-real-2.svg"],
+      "placement": "card"
+    },
+    "insulin": {
+      "title": "Automated Insulin Delivery Research Prototype",
+      "category": "Medical R&D · Control · Mechatronics",
+      "hook": "A pump that checks its own dose three different ways.",
+      "challenge": "Commercial insulin pumps are expensive, and dosing faults are a documented safety problem. The brief was a compact pump that a patient could actually afford, that verifies every dose it delivers.",
+      "work": "Geared actuation driving a power screw, with the delivered volume cross-checked by three independent signals: an encoder on the drive, a potentiometer reading absolute linear position, and a current sensor watching the motor.",
+      "result": "99% dosing accuracy in bench testing, at roughly a 90% cost reduction against commercial pumps. Published at IEEE ITC-Egypt 2025.",
+      "metric": "<1% dosing error",
+      "tags": ["Medical research", "Closed-loop control", "Bench testing"],
+      "image": "insulin-pump-2.svg",
+      "alt": "Automated insulin delivery research prototype",
+      "gallery": ["insulin-pump-2.svg"],
+      "placement": "card"
+    },
+    "arcade": {
+      "title": "Falling Sticks & Buzz Wire for EBank",
+      "category": "Interactive Game Hardware · Client Delivery",
+      "hook": "Two branded arcade games built to survive a crowd.",
+      "challenge": "Build reaction games that pull a crowd in, keep working after hundreds of players in one day, and arrive finished on a fixed event date.",
+      "work": "Led the game mechanism, the frame and enclosure fabrication, the sensors and electronics, the game logic and scoring, the branded finish, and the testing before delivery.",
+      "result": "Falling Sticks and Buzz Wire delivered to EBank, and run again at public startup events with the MARS-Z branding.",
+      "metric": "2 games delivered",
+      "tags": ["Game mechanics", "Sensors + logic", "Event durability"],
+      "image": "falling-sticks-live.svg",
+      "alt": "MARS-Z Falling Sticks arcade game being played at a live event",
+      "gallery": ["falling-sticks-live.svg"],
+      "placement": "card"
+    },
+    "hourglass": {
+      "title": "Digital LED Hourglass",
+      "category": "Connected Product · Embedded Integration",
+      "hook": "A playful object turned into a complete connected prototype.",
+      "challenge": "Make a physical object that senses how it is tilted, and makes digital light behave like real falling sand.",
+      "work": "Integrated the enclosure, LED matrix, motion sensing, controller, prototype PCB, firmware behavior, and companion-app touchpoint using AI-assisted development where useful.",
+      "result": "A working end-to-end prototype demonstrating mechanical, electronic, embedded, and interface integration.",
+      "metric": "Hardware + app",
+      "tags": ["ESP32", "Sensors", "AI-assisted development"],
+      "image": "hourglass-poster.svg",
+      "alt": "Digital LED hourglass connected product",
+      "gallery": ["hourglass-poster.svg"],
+      "placement": "library"
+    },
+    "rov": {
+      "title": "MATE ROV Competition System",
+      "category": "Underwater Robotics · Team Engineering",
+      "hook": "A competition robot engineered, tested, and operated as a team.",
+      "challenge": "Build a controllable underwater robot around buoyancy, propulsion, waterproofing, visibility, and real mission tasks.",
+      "work": "Contributed to mechanical and systems development, rapid troubleshooting, test operations, and team delivery under competition constraints.",
+      "result": "First place at the MATE ROV Egypt national competition.",
+      "metric": "1st place",
+      "tags": ["Underwater robotics", "Integration", "Competition engineering"],
+      "image": "rov-real.svg",
+      "alt": "MATE underwater ROV competition robot",
+      "gallery": ["rov-real.svg"],
+      "placement": "library"
+    },
+    "cfd": {
+      "title": "Simulation-led Mechanical Design",
+      "category": "CFD · FEA · Engineering Validation",
+      "hook": "Make the expensive mistakes in simulation first.",
+      "challenge": "Understand flow, thermal, stress, and deformation behavior early enough to change the design — not merely document it.",
+      "work": "Set up and interpreted ANSYS CFD and FEA studies, checked assumptions and boundary conditions, and fed the results back into CAD and prototype decisions.",
+      "result": "Earlier risk discovery, fewer blind prototype iterations, and clearer evidence behind mechanical design decisions.",
+      "metric": "CFD → CAD → test",
+      "tags": ["ANSYS", "CFD / FEA", "Design iteration"],
+      "image": "cfd.svg",
+      "alt": "ANSYS CFD engineering simulation",
+      "gallery": ["cfd.svg"],
+      "placement": "library"
+    },
+    "care": {
+      "title": "MARS-Z Care",
+      "category": "Clinical Workflow · AI-assisted Product Development",
+      "hook": "A bilingual critical-care workflow product tested on Android against a live server.",
+      "challenge": "ICU and PICU teams were relying on fragmented paper records, making handover, attribution, rapid review, and longitudinal patient tracking unnecessarily difficult.",
+      "work": "Led product architecture and AI-assisted development integration across a Flutter application, FastAPI backend, PostgreSQL database, offline workflows, PDF handover, and review-before-save Arabic and English voice capture.",
+      "result": "A working full-stack product tested on Android and connected to a live server. It is not represented as a deployed or clinically approved medical system.",
+      "metric": "Android + live server",
+      "tags": ["Offline workflows", "AI voice", "Clinical data"],
+      "image": "marsz-care-app.svg",
+      "alt": "MARS-Z Care ICU and PICU Android application",
+      "gallery": ["marsz-care-app.svg"],
+      "placement": "library",
+      "containImage": true
+    },
+    "arc": {
+      "title": "Arc-discharge Research Systems",
+      "category": "Custom Scientific Equipment",
+      "hook": "Custom laboratory hardware made repeatable across three systems.",
+      "challenge": "Package a demanding experimental process into an operable, repeatable, and maintainable university research system.",
+      "work": "Developed the mechanical enclosure and fixtures, integrated subsystems, coordinated fabrication, and standardized assembly and delivery.",
+      "result": "Three identical systems delivered to a university client in Oman.",
+      "metric": "3 systems",
+      "tags": ["Research hardware", "Repeatability", "Delivery"],
+      "image": "arc-discharge.svg",
+      "alt": "Arc-discharge laboratory research system",
+      "gallery": ["arc-discharge.svg"],
+      "placement": "library"
+    },
+    "mannequin": {
+      "title": "Animatronic Mannequin",
+      "category": "Mechanism Design · Motion Control",
+      "hook": "A shop mannequin given moving arms and a moving head.",
+      "challenge": "Fit a drive mechanism for both arms and the head inside a slim mannequin body, keep the motion smooth and quiet in a public space, and keep every part reachable for service.",
+      "work": "Designed the shoulder and neck mechanism, the drive train, the laser-cut frame, the motor mounting, the wiring, and the motion control. Built it in the workshop and tuned the travel limits by hand.",
+      "result": "A working animatronic mannequin with driven arm and head motion.",
+      "metric": "Arms + head motion",
+      "tags": ["Mechanism design", "Motion control", "Fabrication"],
+      "image": "mannequin-mechanism.svg",
+      "alt": "Animatronic mannequin shoulder mechanism with stepper drive and lead screw",
+      "gallery": ["mannequin-mechanism.svg"],
+      "placement": "library"
+    }
+  },
+  "compare": {
+    "kicker": "Design to hardware",
+    "title": "Same machine, both ends of the job.",
+    "intro": "Drag the handle. Left is the CAD model, right is the machine running on the bench with its own control unit and live plot.",
+    "builtImage": "compare-built.svg",
+    "builtAlt": "The inertial rate table built and running on the bench",
+    "cadImage": "compare-cad.svg",
+    "cadAlt": "CAD model of the inertial rate table",
+    "tagLeft": "CAD",
+    "tagRight": "Built"
+  },
+  "about": {
+    "kicker": "The engineer behind the work",
+    "title": "I work where everything has to meet.",
+    "paragraphs": [
+      "I am a Mechanical Engineering M.Sc. and Lead R&D / Product Development Engineer at MARS-Z. My best work sits where mechanics, electronics, control, the workshop, suppliers, and users all have to become one working product.",
+      "I lead a permanent team of 3 engineers and 4 full-time technicians. I use AI to move faster on software and documentation. My firmware and prototype-PCB work is integration level, not specialist level, and I say that upfront."
+    ],
+    "highlight": "I also shoot competitive archery — the same discipline of precision, repeatability, and calm focus carries into my engineering work.",
+    "facts": [
+      "M.Sc. Mechanical Engineering",
+      "Alexandria University",
+      "3 research contributions",
+      "1st place · MATE ROV Egypt",
+      "Competitive archery"
+    ],
+    "image": "about.svg",
+    "imageAlt": "Omar Ismail practicing competitive archery",
+    "imageNote": "Precision outside the lab"
+  },
+  "credentials": {
+    "kicker": "Verified credentials",
+    "title": "Checked, stamped, and published.",
+    "items": [
+      {
+        "type": "Postgraduate",
+        "title": "M.Sc. Mechanical Engineering",
+        "detail": "Alexandria University, awarded February 2026. Thesis: a developed design for a low-cost auto-controlled insulin pump."
+      },
+      {
+        "type": "Undergraduate",
+        "title": "B.Sc. Mechanical Engineering",
+        "detail": "Alexandria University, June 2019. Graduation project: Power-to-Gas sustainable energy system — Best Graduation Project, Energy Track, Egyptian Engineering Day."
+      },
+      {
+        "type": "Conference",
+        "title": "IEEE ITC-Egypt 2025",
+        "detail": "Presented \"A Developed Design of Low-Cost Insulin Pump for Automated Insulin Delivery (AID) System\"."
+      },
+      {
+        "type": "Peer-reviewed",
+        "title": "Three published contributions",
+        "detail": "IEEE ITC-Egypt 2025 · The Journal of Prosthetic Dentistry 2024 · Scientific Reports 2024. Devices I engineered were used to produce the published results."
+      }
+    ]
+  },
+  "contact": {
+    "kicker": "Have a hardware problem that keeps failing?",
+    "title": "Let's turn it into something that works.",
+    "body": "More than seven years of hands-on engineering: I design custom machines and electromechanical products, build them, test them, and hand them over working. Open to Product Development, Mechanical R&D, Robotics, Simulation and Research Engineering roles.",
+    "emailLabel": "Email Omar",
+    "whatsappLabel": "WhatsApp",
+    "linkedInLabel": "LinkedIn",
+    "cvLabel": "Download CV",
+    "phoneLabel": "Or call directly —"
+  },
+  "challenge": {
+    "launchKicker": "Takes 30 seconds",
+    "launchTitle": "Can you save the prototype?",
+    "launchBody": "Three real trade-offs from actual projects. Your answers show how you think.",
+    "launchCta": "Start the challenge",
+    "dialogKicker": "Engineering challenge",
+    "dialogTitle": "Save the prototype.",
+    "pills": ["Reliability", "Speed", "Cost"],
+    "rounds": [
+      {
+        "question": "The brief is vague, but the deadline is moving. What do you do first?",
+        "options": [
+          {
+            "label": "Freeze the CAD and start machining.",
+            "scores": { "reliability": 0, "speed": 3, "cost": 1 },
+            "title": "Fast start, expensive finish.",
+            "feedback": "You gained visible speed, but unresolved acceptance criteria usually reappear as rework."
+          },
+          {
+            "label": "Define acceptance tests and build a quick risk rig.",
+            "scores": { "reliability": 3, "speed": 2, "cost": 3 },
+            "title": "Best systems move.",
+            "feedback": "A small experiment buys clarity before detail design locks the wrong assumptions in."
+          },
+          {
+            "label": "Add every sensor you might need.",
+            "scores": { "reliability": 1, "speed": 0, "cost": 0 },
+            "title": "More data is not always more certainty.",
+            "feedback": "Instrumentation helps only when each measurement answers a defined engineering question."
+          }
+        ]
+      },
+      {
+        "question": "The mechanism vibrates near the 15 Hz target. What is your next move?",
+        "options": [
+          {
+            "label": "Thicken every bracket.",
+            "scores": { "reliability": 1, "speed": 1, "cost": 0 },
+            "title": "The safe-looking answer has a mass penalty.",
+            "feedback": "Blanket stiffness can shift the problem, overload the drivetrain, and hide the actual excitation source."
+          },
+          {
+            "label": "Measure, isolate the mode, then rebalance and tune.",
+            "scores": { "reliability": 3, "speed": 2, "cost": 2 },
+            "title": "Evidence before reinforcement.",
+            "feedback": "Separate structural, imbalance, and control effects so each fix has a reason and a verification test."
+          },
+          {
+            "label": "Lower the advertised target frequency.",
+            "scores": { "reliability": 0, "speed": 3, "cost": 3 },
+            "title": "The prototype survives; the requirement does not.",
+            "feedback": "Changing a requirement is valid only when the stakeholder accepts the product trade-off."
+          }
+        ]
+      },
+      {
+        "question": "The prototype works. The client now wants hundreds. What changes first?",
+        "options": [
+          {
+            "label": "Repeat the one-off build exactly.",
+            "scores": { "reliability": 0, "speed": 2, "cost": 0 },
+            "title": "A prototype process is not a production process.",
+            "feedback": "Hidden craftsmanship and undocumented adjustments multiply variation as volume grows."
+          },
+          {
+            "label": "Run DFM, add jigs, test points, and an acceptance checklist.",
+            "scores": { "reliability": 3, "speed": 2, "cost": 3 },
+            "title": "You turned a build into a product line.",
+            "feedback": "Repeatability comes from designed interfaces, controlled variation, and a test that every unit can pass."
+          },
+          {
+            "label": "Send the drawings out and inspect at the end.",
+            "scores": { "reliability": 1, "speed": 3, "cost": 1 },
+            "title": "Supplier speed without process visibility.",
+            "feedback": "Late inspection catches failures after value has already been added. Critical characteristics need earlier control."
+          }
+        ]
+      }
+    ],
+    "results": {
+      "high": {
+        "title": "Prototype saved — systems thinker.",
+        "text": "You balanced delivery speed with measurable reliability and cost control. That is the product-development loop I use on real hardware.",
+        "threshold": 23
+      },
+      "fast": {
+        "title": "Fast builder, exposed validation.",
+        "text": "You kept momentum high, but the system carries hidden technical debt. Add earlier tests and isolate the highest-cost failure mode."
+      },
+      "default": {
+        "title": "Prototype recovered — one more validation pass.",
+        "text": "The engineering direction is sound. Strengthen the acceptance test and manufacturing feedback loop before calling it delivered."
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "./site.schema.json",
+  "title": "Omar portfolio site content",
+  "type": "object",
+  "required": ["profile", "nav", "hero", "projects", "featuredProjectId"],
+  "properties": {
+    "profile": { "type": "object" },
+    "nav": { "type": "array" },
+    "hero": { "type": "object" },
+    "deliveryStrip": { "type": "object" },
+    "impact": { "type": "object" },
+    "featuredProjectId": { "type": "string" },
+    "work": { "type": "object" },
+    "projects": { "type": "object" },
+    "compare": { "type": "object" },
+    "about": { "type": "object" },
+    "credentials": { "type": "object" },
+    "contact": { "type": "object" },
+    "challenge": { "type": "object" }
+  }
+}
