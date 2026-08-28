@@ -1,320 +1,318 @@
 {
   "$schema": "./site.schema.json",
   "profile": {
-    "name": "Omar Ismail",
-    "initials": "OI",
-    "role": "R&D / Product Development",
-    "tagline": "Product Development / Mechanical R&D Engineer",
-    "footerTagline": "Built around evidence.",
+    "name": "Omar Abu Qahf",
+    "initials": "OA",
+    "role": "Product Development · Mechanical Design",
+    "tagline": "Product Development Engineer · ELARABY Group",
+    "footerTagline": "From sketch to shippable product.",
     "email": "",
     "phone": "",
     "whatsapp": "",
-    "linkedIn": "",
+    "linkedIn": "https://www.linkedin.com/in/omar-abo-qahf/",
     "cvUrl": "",
     "portrait": "hero-portrait.svg",
-    "portraitAlt": "Omar Ismail, Product Development and Mechanical R&D Engineer",
-    "portraitBadge": "50+ builds"
+    "portraitAlt": "Omar Abu Qahf, Product Development and Mechanical Design Engineer",
+    "portraitBadge": "CATIA · EBOM"
   },
   "nav": [
-    { "label": "Work", "href": "#work", "mobileLabel": "Selected work" },
-    { "label": "Proof", "href": "#proof", "mobileLabel": "Evidence" },
-    { "label": "Challenge", "href": "#game", "mobileLabel": "Engineering challenge" },
+    { "label": "Products", "href": "#work", "mobileLabel": "Selected products" },
+    { "label": "Impact", "href": "#proof", "mobileLabel": "Impact" },
+    { "label": "Trade-offs", "href": "#game", "mobileLabel": "Design trade-offs" },
     { "label": "About", "href": "#about" },
     { "label": "CV ↓", "href": "#contact", "mobileLabel": "Download CV ↓" }
   ],
   "hero": {
-    "eyebrow": "Product Development / Mechanical R&D Engineer",
-    "headline": "I turn rough ideas into machines that work.",
-    "lead": "7+ years turning requirements into working hardware. 50+ client-funded systems engineered and delivered from requirements through build, test, and handover.",
-    "primaryCta": "See the engineering",
+    "eyebrow": "Product Development Engineer · ELARABY Group",
+    "headline": "I turn concepts into parts that survive production.",
+    "lead": "Mechanical design engineer connecting product development and the factory floor. From first sketch in CATIA and 3DExperience through EBOM, prototype testing, and DFM — I work where CAD, tolerance, and the line all have to agree.",
+    "primaryCta": "See the work",
     "secondaryCta": "Download CV",
     "proofStats": [
-      { "value": "50+", "label": "client-funded prototypes" },
-      { "value": "≈300", "label": "units in one product line" },
-      { "value": "250,000", "label": "test cycles on one research machine" }
+      { "value": "CATIA · 3DExperience", "label": "daily design stack" },
+      { "value": "SAP · EBOM", "label": "lifecycle ownership" },
+      { "value": "DFM · DFMEA · GD&T", "label": "production discipline" }
     ],
     "floatingNotes": [
-      { "label": "SHOWING", "value": "Top 5 projects" },
+      { "label": "SHOWING", "value": "Home appliances" },
       { "label": "VIEWING", "value": "Product Development" }
     ],
-    "footerLine": "Design → drawings → workshop → tested machine → handover"
+    "footerLine": "Concept → CAD → EBOM → prototype → validation → production handoff"
   },
   "deliveryStrip": {
-    "label": "Selected delivery context",
+    "label": "Built in this context",
     "clients": [
-      "Pulsar / Si-Ware",
-      "EBank",
-      "University systems · Oman",
-      "Products exported · Gulf & Europe"
+      "ELARABY Group",
+      "Home appliances",
+      "Injection molding & sheet metal",
+      "Ain Shams University · Cairo"
     ]
   },
   "impact": {
     "kicker": "Proof before promises",
-    "title": "Engineering output you can count.",
-    "description": "No company-wide claims. Only systems I directly led or engineered with the MARS-Z team, and the results they produced.",
+    "title": "Output you can trace to the line.",
+    "description": "Metrics and practices from product development at ELARABY Group and mechanical design work at ASUWind — not generic team claims.",
     "stats": [
       {
-        "value": 50,
+        "value": 2,
         "suffix": "+",
-        "label": "Client-funded machines and prototypes I directly engineered or led through delivery with the MARS-Z team"
+        "label": "Years across product development and mechanical design roles in appliances and renewables"
       },
       {
-        "value": 300,
-        "prefix": "≈",
-        "label": "Units manufactured after I led the move from prototype into repeatable production"
+        "value": 3,
+        "suffix": "+",
+        "label": "Production CAD environments — CATIA, 3DExperience, Solidworks, and NX"
       },
       {
-        "value": 250000,
-        "label": "Test cycles run by a research rig I engineered for a published dental study"
+        "value": 6,
+        "label": "Core practices in daily work — DFM, DFMEA, GD&T, EBOM, SAP, and ISO-aligned documentation"
       },
       {
-        "value": 90,
-        "suffix": "%",
-        "label": "Cheaper than commercial insulin pumps — my M.Sc. device, published by IEEE"
+        "value": 2022,
+        "label": "B.Sc. Mechanical Design & Production Engineering — Ain Shams University"
       }
     ]
   },
-  "featuredProjectId": "rate-table",
+  "featuredProjectId": "elaraby-appliance",
   "work": {
     "kicker": "Most relevant work first",
-    "title": "Built, tested, delivered.",
-    "description": "The closest match to this role comes first. Open any card for the full story.",
+    "title": "Designed, validated, industrialized.",
+    "description": "Product development and mechanical design work — open any card for challenge, contribution, and outcome.",
     "libraryKicker": "More engineering range",
-    "libraryTitle": "Six more systems, built the same way.",
+    "libraryTitle": "Six more builds, same rigor.",
     "libraryCount": "12 projects in total"
   },
   "projects": {
-    "rate-table": {
-      "title": "High-precision Inertial Rate Table",
-      "category": "Motion Control · Robotics · Test Equipment",
-      "hook": "A table that turns at a rate you can trust, so a gyroscope can be judged against it.",
-      "challenge": "Deliver steady, programmable rotation across a wide speed range, while keeping the machine easy to service and practical to build.",
-      "work": "Led the mechanism, drivetrain, sensing, control integration, fabrication coordination, and iterative validation. Combined mechanical refinement with encoder feedback and repeatable test routines.",
-      "result": "Client-side analysis measured 32.8 ppmFS encoder-to-command nonlinearity over a ±300 dps sweep. The final client-run session also demonstrated sinusoidal motion up to 15 Hz at 400 dps peak.",
-      "metric": "32.8 ppmFS nonlinearity",
-      "tags": ["Precision mechanics", "Motion control", "Validation"],
-      "image": "rt-real-1.svg",
-      "alt": "Custom inertial rate table test equipment",
-      "gallery": ["rt-real-1.svg", "rt-real-2.svg", "rt-render.svg"],
-      "placement": "card",
-      "cad": "https://a360.co/43Qv1gf"
-    },
-    "sensory": {
-      "title": "Visual Sensory Learning Product Line",
-      "category": "Product Development · DFM · Manufacturing",
-      "hook": "From a custom device to a repeatable product line.",
-      "challenge": "Create a robust, engaging sensory product that could be manufactured repeatedly, maintained easily, and supplied at meaningful volume.",
-      "work": "Led product iteration, mechanical/electrical integration, fabrication methods, assembly improvements, test checks, and coordination with the permanent engineering and technician team.",
-      "result": "Around 300 cumulative units delivered for one client product line; the client exports units to Gulf and European markets.",
-      "metric": "≈300 units",
-      "tags": ["Productization", "DFM / DFA", "Team delivery"],
+    "elaraby-appliance": {
+      "title": "Home Appliance Component Development",
+      "category": "Product Development · ELARABY Group",
+      "hook": "Appliance parts that have to pass mold, assembly, and the quality gate — not just look right in CAD.",
+      "challenge": "Lead design and development of home appliance components and assemblies under production schedules, balancing performance, cost, and manufacturability for injection-molded and sheet-metal parts.",
+      "work": "Create and refine 3D models in CATIA and 3DExperience. Define subsystem structures, manage engineering BOM through the lifecycle, build prototypes, run test activities, and iterate with R&D, production, quality, procurement, and suppliers.",
+      "result": "Production-bound designs with documented EBOMs, technical reports, and compliance with company and international standards. Supports industrialization and localization initiatives at ELARABY Group.",
+      "metric": "Production-bound",
+      "tags": ["CATIA", "3DExperience", "EBOM"],
       "image": "sensory-learning-panel.svg",
-      "alt": "Manufactured sensory learning device",
+      "alt": "Home appliance component product development",
       "gallery": ["sensory-learning-panel.svg"],
       "placement": "card"
     },
-    "chewing": {
-      "title": "Chewing Simulator",
-      "category": "Research Equipment · Mechanism Design",
-      "hook": "A rig that has to chew for months without drifting.",
-      "challenge": "Reproduce chewing motion and load over hundreds of thousands of cycles, in water held at body temperature, without losing alignment or accuracy along the way.",
-      "work": "2040 aluminium extrusion frame for rigidity and modular assembly. The Z-axis runs on a NEMA 23 stepper and ballscrew, guided by linear rods and carrying up to 15 kg per head to apply controlled force on the samples.",
-      "result": "The rig ran the thermomechanical ageing for a published dental study: 48 prepared molars across three restorative groups, 250,000 mechanical cycles with 1,000 thermal cycles running simultaneously.",
-      "metric": "250,000 cycles",
-      "tags": ["Mechanism design", "Experimental rigs", "Reliability"],
-      "image": "chewing-simulator.svg",
-      "alt": "Custom chewing simulator research rig",
-      "gallery": ["chewing-simulator.svg"],
+    "mold-injection": {
+      "title": "Injection-Molded Appliance Housing",
+      "category": "Product Development · DFM",
+      "hook": "A plastic part family that has to mold cleanly, assemble fast, and survive the appliance lifecycle.",
+      "challenge": "Design injection-molded components with correct draft, wall thickness, and ribbing while meeting structural and aesthetic requirements for a high-volume appliance line.",
+      "work": "Applied DFM/DFA principles, material selection, and tolerance analysis. Coordinated with tooling and production teams on moldability feedback and design revisions before release.",
+      "result": "Validated mold-ready geometry with improved manufacturability and fewer late-stage tooling surprises.",
+      "metric": "DFM-ready",
+      "tags": ["Injection molding", "DFM / DFA", "Tolerances"],
+      "image": "hourglass-poster.svg",
+      "alt": "Injection-molded appliance component design",
+      "gallery": ["hourglass-poster.svg"],
       "placement": "card"
     },
-    "ventilator": {
-      "title": "Emergency Ventilator Prototype",
-      "category": "Rapid R&D · Mechanical / Flow Systems",
-      "hook": "A rapid-response prototype developed under urgent constraints.",
-      "challenge": "Translate clinical and airflow needs into a buildable mechanism while managing safety, repeatability, and limited development time.",
-      "work": "Supported mechanical architecture, airflow-path development, CAD, fabrication, control integration, and physical iteration.",
-      "result": "A functional engineering prototype used to explore the design space; not represented as a certified medical device.",
-      "metric": "Working prototype",
-      "tags": ["Rapid prototyping", "Flow systems", "Test iteration"],
+    "sheet-metal-bracket": {
+      "title": "Sheet-Metal Bracket & Enclosure Family",
+      "category": "Mechanical Design · Sheet Metal",
+      "hook": "Brackets that have to bend, punch, and assemble without fighting the line.",
+      "challenge": "Develop sheet-metal parts that meet stiffness targets, fit existing assembly interfaces, and remain economical at volume.",
+      "work": "Detailed sheet-metal designs with bend allowances, hole patterns, and GD&T. Supported prototype builds and fit checks with production and quality teams.",
+      "result": "Released sheet-metal designs with clear tolerances and assembly documentation for repeatable manufacturing.",
+      "metric": "Released to mfg",
+      "tags": ["Sheet metal", "GD&T", "Assembly"],
+      "image": "compare-built.svg",
+      "alt": "Sheet-metal bracket mechanical design",
+      "gallery": ["compare-built.svg"],
+      "placement": "card"
+    },
+    "prototype-validation": {
+      "title": "Prototype Build & Test Loop",
+      "category": "Prototyping · Validation",
+      "hook": "Build it, break it, fix it — before the factory does.",
+      "challenge": "Verify mechanical performance and assembly fit early enough to change the design cheaply, not after tooling is committed.",
+      "work": "Built and evaluated prototypes, captured performance data, ran root-cause investigations, and fed improvements back into CAD and EBOM releases.",
+      "result": "Fewer late engineering changes and clearer evidence behind design decisions before handover to production.",
+      "metric": "Test-driven",
+      "tags": ["Prototyping", "Root cause", "Iteration"],
       "image": "ventilator-real-2.svg",
-      "alt": "Emergency ventilator engineering prototype",
+      "alt": "Engineering prototype validation",
       "gallery": ["ventilator-real-2.svg"],
       "placement": "card"
     },
-    "insulin": {
-      "title": "Automated Insulin Delivery Research Prototype",
-      "category": "Medical R&D · Control · Mechatronics",
-      "hook": "A pump that checks its own dose three different ways.",
-      "challenge": "Commercial insulin pumps are expensive, and dosing faults are a documented safety problem. The brief was a compact pump that a patient could actually afford, that verifies every dose it delivers.",
-      "work": "Geared actuation driving a power screw, with the delivered volume cross-checked by three independent signals: an encoder on the drive, a potentiometer reading absolute linear position, and a current sensor watching the motor.",
-      "result": "99% dosing accuracy in bench testing, at roughly a 90% cost reduction against commercial pumps. Published at IEEE ITC-Egypt 2025.",
-      "metric": "<1% dosing error",
-      "tags": ["Medical research", "Closed-loop control", "Bench testing"],
-      "image": "insulin-pump-2.svg",
-      "alt": "Automated insulin delivery research prototype",
-      "gallery": ["insulin-pump-2.svg"],
+    "ebom-lifecycle": {
+      "title": "EBOM & Engineering Change Management",
+      "category": "PLM · SAP · Lifecycle",
+      "hook": "The drawing is only half the product — the BOM has to stay true as the program moves.",
+      "challenge": "Keep engineering structures, specifications, and change records aligned as designs evolve through prototype, pilot, and production phases.",
+      "work": "Managed EBOM structures in SAP-linked workflows, prepared drawings and specifications, and supported engineering change management with cross-functional teams.",
+      "result": "Traceable product data from development through release, with documentation suitable for audit and supplier coordination.",
+      "metric": "EBOM managed",
+      "tags": ["SAP", "EBOM", "ECO"],
+      "image": "marsz-care-app.svg",
+      "alt": "Engineering BOM and product data management",
+      "gallery": ["marsz-care-app.svg"],
+      "placement": "card",
+      "containImage": true
+    },
+    "supplier-dfm": {
+      "title": "Supplier Development & Cost Optimization",
+      "category": "DFM · Sourcing · Localization",
+      "hook": "When the supplier says the part is hard to make, the answer is in the model — not in a meeting.",
+      "challenge": "Improve manufacturability and cost while protecting critical functions and compliance requirements during supplier engagement and localization work.",
+      "work": "Ran DFMEA and design reviews, supported supplier development, and applied tolerance and material changes with documented validation.",
+      "result": "Design updates that reduced manufacturing risk and supported cost and localization goals without silent spec drift.",
+      "metric": "Cost · risk down",
+      "tags": ["DFMEA", "Suppliers", "Localization"],
+      "image": "chewing-simulator.svg",
+      "alt": "Supplier-focused design for manufacturability",
+      "gallery": ["chewing-simulator.svg"],
       "placement": "card"
     },
-    "arcade": {
-      "title": "Falling Sticks & Buzz Wire for EBank",
-      "category": "Interactive Game Hardware · Client Delivery",
-      "hook": "Two branded arcade games built to survive a crowd.",
-      "challenge": "Build reaction games that pull a crowd in, keep working after hundreds of players in one day, and arrive finished on a fixed event date.",
-      "work": "Led the game mechanism, the frame and enclosure fabrication, the sensors and electronics, the game logic and scoring, the branded finish, and the testing before delivery.",
-      "result": "Falling Sticks and Buzz Wire delivered to EBank, and run again at public startup events with the MARS-Z branding.",
-      "metric": "2 games delivered",
-      "tags": ["Game mechanics", "Sensors + logic", "Event durability"],
-      "image": "falling-sticks-live.svg",
-      "alt": "MARS-Z Falling Sticks arcade game being played at a live event",
-      "gallery": ["falling-sticks-live.svg"],
-      "placement": "card"
-    },
-    "hourglass": {
-      "title": "Digital LED Hourglass",
-      "category": "Connected Product · Embedded Integration",
-      "hook": "A playful object turned into a complete connected prototype.",
-      "challenge": "Make a physical object that senses how it is tilted, and makes digital light behave like real falling sand.",
-      "work": "Integrated the enclosure, LED matrix, motion sensing, controller, prototype PCB, firmware behavior, and companion-app touchpoint using AI-assisted development where useful.",
-      "result": "A working end-to-end prototype demonstrating mechanical, electronic, embedded, and interface integration.",
-      "metric": "Hardware + app",
-      "tags": ["ESP32", "Sensors", "AI-assisted development"],
-      "image": "hourglass-poster.svg",
-      "alt": "Digital LED hourglass connected product",
-      "gallery": ["hourglass-poster.svg"],
-      "placement": "library"
-    },
-    "rov": {
-      "title": "MATE ROV Competition System",
-      "category": "Underwater Robotics · Team Engineering",
-      "hook": "A competition robot engineered, tested, and operated as a team.",
-      "challenge": "Build a controllable underwater robot around buoyancy, propulsion, waterproofing, visibility, and real mission tasks.",
-      "work": "Contributed to mechanical and systems development, rapid troubleshooting, test operations, and team delivery under competition constraints.",
-      "result": "First place at the MATE ROV Egypt national competition.",
-      "metric": "1st place",
-      "tags": ["Underwater robotics", "Integration", "Competition engineering"],
-      "image": "rov-real.svg",
-      "alt": "MATE underwater ROV competition robot",
-      "gallery": ["rov-real.svg"],
-      "placement": "library"
-    },
-    "cfd": {
-      "title": "Simulation-led Mechanical Design",
-      "category": "CFD · FEA · Engineering Validation",
-      "hook": "Make the expensive mistakes in simulation first.",
-      "challenge": "Understand flow, thermal, stress, and deformation behavior early enough to change the design — not merely document it.",
-      "work": "Set up and interpreted ANSYS CFD and FEA studies, checked assumptions and boundary conditions, and fed the results back into CAD and prototype decisions.",
-      "result": "Earlier risk discovery, fewer blind prototype iterations, and clearer evidence behind mechanical design decisions.",
-      "metric": "CFD → CAD → test",
-      "tags": ["ANSYS", "CFD / FEA", "Design iteration"],
+    "asuwind-turbine": {
+      "title": "Compact Wind Turbine Generator — ASUWind",
+      "category": "Renewables · ASUWind · Team Engineering",
+      "hook": "A small-scale generator designed to compete on efficiency, not just on slides.",
+      "challenge": "Contribute to the mechanical design of a compact wind turbine generator as part of a university team targeting competitive small-scale power generation.",
+      "work": "Supported design and development of mechanical subsystems, coordinated with team members on integration, prototyping, and test preparation at ASUWind.",
+      "result": "Contributed to a cohesive mechanical design direction for a competitive small-scale wind energy prototype.",
+      "metric": "Team delivery",
+      "tags": ["Wind energy", "Mechanism design", "ASUWind"],
       "image": "cfd.svg",
-      "alt": "ANSYS CFD engineering simulation",
+      "alt": "ASUWind compact wind turbine mechanical design",
       "gallery": ["cfd.svg"],
       "placement": "library"
     },
-    "care": {
-      "title": "MARS-Z Care",
-      "category": "Clinical Workflow · AI-assisted Product Development",
-      "hook": "A bilingual critical-care workflow product tested on Android against a live server.",
-      "challenge": "ICU and PICU teams were relying on fragmented paper records, making handover, attribution, rapid review, and longitudinal patient tracking unnecessarily difficult.",
-      "work": "Led product architecture and AI-assisted development integration across a Flutter application, FastAPI backend, PostgreSQL database, offline workflows, PDF handover, and review-before-save Arabic and English voice capture.",
-      "result": "A working full-stack product tested on Android and connected to a live server. It is not represented as a deployed or clinically approved medical system.",
-      "metric": "Android + live server",
-      "tags": ["Offline workflows", "AI voice", "Clinical data"],
+    "tolerance-stack": {
+      "title": "Tolerance Stack & GD&T Reviews",
+      "category": "GD&T · Quality · Mechanical Design",
+      "hook": "When assemblies fail fit at the line, the stack-up usually tells the story.",
+      "challenge": "Ensure critical interfaces close across multiple parts and suppliers without over-constraining the design or hiding risk in average dimensions.",
+      "work": "Applied GD&T, ran tolerance analyses, and documented design reviews with production and quality stakeholders before release.",
+      "result": "Clearer control of critical characteristics and fewer fit issues discovered only at assembly.",
+      "metric": "GD&T-led",
+      "tags": ["GD&T", "Stack-up", "Design review"],
+      "image": "rt-render.svg",
+      "alt": "GD&T and tolerance analysis",
+      "gallery": ["rt-render.svg"],
+      "placement": "library"
+    },
+    "sap-workflow": {
+      "title": "SAP-Linked Engineering Documentation",
+      "category": "PLM · Data · Process",
+      "hook": "If the BOM in SAP and the model in CAD disagree, production picks the expensive truth.",
+      "challenge": "Maintain consistent engineering data across CAD releases, BOM structures, and shop-facing documentation.",
+      "work": "Used SAP with Excel/VBA and structured reporting to improve engineering workflows, product data accuracy, and decision support for the team.",
+      "result": "More reliable handoffs between design, documentation, and production planning.",
+      "metric": "SAP · data",
+      "tags": ["SAP", "Excel / VBA", "Documentation"],
       "image": "marsz-care-app.svg",
-      "alt": "MARS-Z Care ICU and PICU Android application",
+      "alt": "SAP engineering workflow support",
       "gallery": ["marsz-care-app.svg"],
       "placement": "library",
       "containImage": true
     },
-    "arc": {
-      "title": "Arc-discharge Research Systems",
-      "category": "Custom Scientific Equipment",
-      "hook": "Custom laboratory hardware made repeatable across three systems.",
-      "challenge": "Package a demanding experimental process into an operable, repeatable, and maintainable university research system.",
-      "work": "Developed the mechanical enclosure and fixtures, integrated subsystems, coordinated fabrication, and standardized assembly and delivery.",
-      "result": "Three identical systems delivered to a university client in Oman.",
-      "metric": "3 systems",
-      "tags": ["Research hardware", "Repeatability", "Delivery"],
+    "3dexperience-architecture": {
+      "title": "3DExperience Product Architecture",
+      "category": "CAD · PLM · 3DExperience",
+      "hook": "A product line needs a structure — not a folder full of parts with similar names.",
+      "challenge": "Define subsystem structures and design architectures that scale as variants and engineering changes accumulate.",
+      "work": "Built product architectures in 3DExperience, linked components to EBOM intent, and kept models organized for cross-team collaboration.",
+      "result": "Clearer product breakdown and faster navigation for engineers joining mid-program.",
+      "metric": "Architecture",
+      "tags": ["3DExperience", "PLM", "Structure"],
+      "image": "hourglass-poster.svg",
+      "alt": "3DExperience product architecture",
+      "gallery": ["hourglass-poster.svg"],
+      "placement": "library"
+    },
+    "supply-chain-sc4x": {
+      "title": "Supply Chain Technology Exposure — SC4x",
+      "category": "Supply Chain · Data · Learning",
+      "hook": "Engineering decisions echo in the supply chain — seeing that loop makes better designs.",
+      "challenge": "Connect mechanical product thinking with supply-chain and data concepts through structured learning and practical tooling exposure.",
+      "work": "Participated in supply-chain technology programs, including hands-on work with data-oriented tooling and machine-learning concepts applied to logistics problems.",
+      "result": "Broader view of how design choices affect downstream planning, cost, and delivery — useful when industrializing appliance programs.",
+      "metric": "SC4x · data",
+      "tags": ["Supply chain", "Analytics", "Cross-domain"],
       "image": "arc-discharge.svg",
-      "alt": "Arc-discharge laboratory research system",
+      "alt": "Supply chain technology learning",
       "gallery": ["arc-discharge.svg"],
       "placement": "library"
     },
-    "mannequin": {
-      "title": "Animatronic Mannequin",
-      "category": "Mechanism Design · Motion Control",
-      "hook": "A shop mannequin given moving arms and a moving head.",
-      "challenge": "Fit a drive mechanism for both arms and the head inside a slim mannequin body, keep the motion smooth and quiet in a public space, and keep every part reachable for service.",
-      "work": "Designed the shoulder and neck mechanism, the drive train, the laser-cut frame, the motor mounting, the wiring, and the motion control. Built it in the workshop and tuned the travel limits by hand.",
-      "result": "A working animatronic mannequin with driven arm and head motion.",
-      "metric": "Arms + head motion",
-      "tags": ["Mechanism design", "Motion control", "Fabrication"],
+    "capstone-energy": {
+      "title": "University Capstone — Energy Systems",
+      "category": "Education · Mechanical Engineering",
+      "hook": "Graduation work that had to prove itself on a bench, not just in a report.",
+      "challenge": "Deliver a rigorous mechanical engineering capstone within university standards while meeting real performance and documentation expectations.",
+      "work": "Applied mechanical design and production engineering fundamentals from Ain Shams University coursework to a structured graduation project with formal review and documentation.",
+      "result": "Completed B.Sc. requirements in Mechanical Design & Production Engineering with hands-on design and analysis experience.",
+      "metric": "B.Sc. capstone",
+      "tags": ["Ain Shams", "Mechanical design", "Analysis"],
       "image": "mannequin-mechanism.svg",
-      "alt": "Animatronic mannequin shoulder mechanism with stepper drive and lead screw",
+      "alt": "University mechanical engineering capstone project",
       "gallery": ["mannequin-mechanism.svg"],
       "placement": "library"
     }
   },
   "compare": {
     "kicker": "Design to hardware",
-    "title": "Same machine, both ends of the job.",
-    "intro": "Drag the handle. Left is the CAD model, right is the machine running on the bench with its own control unit and live plot.",
+    "title": "Same part, both ends of the job.",
+    "intro": "Drag the handle. Left is the CAD model, right is the prototype or production sample on the bench.",
     "builtImage": "compare-built.svg",
-    "builtAlt": "The inertial rate table built and running on the bench",
+    "builtAlt": "Physical prototype of a mechanical appliance component",
     "cadImage": "compare-cad.svg",
-    "cadAlt": "CAD model of the inertial rate table",
+    "cadAlt": "CAD model of an appliance component in CATIA",
     "tagLeft": "CAD",
     "tagRight": "Built"
   },
   "about": {
     "kicker": "The engineer behind the work",
-    "title": "I work where everything has to meet.",
+    "title": "I work where design meets the factory.",
     "paragraphs": [
-      "I am a Mechanical Engineering M.Sc. and Lead R&D / Product Development Engineer at MARS-Z. My best work sits where mechanics, electronics, control, the workshop, suppliers, and users all have to become one working product.",
-      "I lead a permanent team of 3 engineers and 4 full-time technicians. I use AI to move faster on software and documentation. My firmware and prototype-PCB work is integration level, not specialist level, and I say that upfront."
+      "I am a Product Development Engineer at ELARABY Group and a mechanical design engineer with a B.Sc. from Ain Shams University. My work sits where CAD, EBOM, prototyping, and production requirements all have to align for home appliance programs.",
+      "Before ELARABY, I contributed as a Mechanical Design Engineer with ASUWind on compact wind turbine development. I collaborate daily with R&D, production, quality, procurement, and suppliers — and I care about documentation, GD&T, DFMEA, and SAP-linked data that teams can actually use."
     ],
-    "highlight": "I also shoot competitive archery — the same discipline of precision, repeatability, and calm focus carries into my engineering work.",
     "facts": [
-      "M.Sc. Mechanical Engineering",
-      "Alexandria University",
-      "3 research contributions",
-      "1st place · MATE ROV Egypt",
-      "Competitive archery"
+      "B.Sc. Mechanical Design & Production",
+      "Ain Shams University",
+      "CATIA · 3DExperience",
+      "SAP · EBOM",
+      "GD&T · DFMEA · DFM"
     ],
     "image": "about.svg",
-    "imageAlt": "Omar Ismail practicing competitive archery",
-    "imageNote": "Precision outside the lab"
+    "imageAlt": "Omar Abu Qahf, mechanical design and product development engineer",
+    "imageNote": "Engineering outside the CAD window"
   },
   "credentials": {
     "kicker": "Verified credentials",
-    "title": "Checked, stamped, and published.",
+    "title": "Checked, stamped, and practiced.",
     "items": [
       {
-        "type": "Postgraduate",
-        "title": "M.Sc. Mechanical Engineering",
-        "detail": "Alexandria University, awarded February 2026. Thesis: a developed design for a low-cost auto-controlled insulin pump."
-      },
-      {
         "type": "Undergraduate",
-        "title": "B.Sc. Mechanical Engineering",
-        "detail": "Alexandria University, June 2019. Graduation project: Power-to-Gas sustainable energy system — Best Graduation Project, Energy Track, Egyptian Engineering Day."
+        "title": "B.Sc. Mechanical Design & Production Engineering",
+        "detail": "Ain Shams University (ASU), Cairo. Graduated January 2022. Foundation in mechanical design, manufacturing, and production engineering."
       },
       {
-        "type": "Conference",
-        "title": "IEEE ITC-Egypt 2025",
-        "detail": "Presented \"A Developed Design of Low-Cost Insulin Pump for Automated Insulin Delivery (AID) System\"."
+        "type": "Current role",
+        "title": "Product Development Engineer — ELARABY Group",
+        "detail": "Since September 2024. Design and development of home appliance components using CATIA and 3DExperience; EBOM, prototyping, DFM/DFA, and cross-functional industrialization."
       },
       {
-        "type": "Peer-reviewed",
-        "title": "Three published contributions",
-        "detail": "IEEE ITC-Egypt 2025 · The Journal of Prosthetic Dentistry 2024 · Scientific Reports 2024. Devices I engineered were used to produce the published results."
+        "type": "Experience",
+        "title": "Mechanical Design Engineer — ASUWind",
+        "detail": "Contributed to mechanical design for a compact wind turbine generator with Ain Shams University's ASUWind team."
+      },
+      {
+        "type": "Practice",
+        "title": "Engineering discipline stack",
+        "detail": "GD&T, DFMEA, tolerance analysis, ISO-aligned documentation, SAP product data, Excel/VBA for engineering workflows, and supplier/localization support."
       }
     ]
   },
   "contact": {
-    "kicker": "Have a hardware problem that keeps failing?",
-    "title": "Let's turn it into something that works.",
-    "body": "More than seven years of hands-on engineering: I design custom machines and electromechanical products, build them, test them, and hand them over working. Open to Product Development, Mechanical R&D, Robotics, Simulation and Research Engineering roles.",
+    "kicker": "Building something that has to ship?",
+    "title": "Let's talk product development.",
+    "body": "Product Development Engineer at ELARABY Group in Cairo. Open to mechanical design, product development, DFM, and industrialization roles in appliances, manufacturing, and renewables. Reach out on LinkedIn or download my CV.",
     "emailLabel": "Email Omar",
     "whatsappLabel": "WhatsApp",
     "linkedInLabel": "LinkedIn",
@@ -323,96 +321,96 @@
   },
   "challenge": {
     "launchKicker": "Takes 30 seconds",
-    "launchTitle": "Can you save the prototype?",
-    "launchBody": "Three real trade-offs from actual projects. Your answers show how you think.",
+    "launchTitle": "Can you navigate the trade-offs?",
+    "launchBody": "Three product-development dilemmas from real program pressure. Your answers show how you think.",
     "launchCta": "Start the challenge",
-    "dialogKicker": "Engineering challenge",
-    "dialogTitle": "Save the prototype.",
+    "dialogKicker": "Design trade-offs",
+    "dialogTitle": "Save the release.",
     "pills": ["Reliability", "Speed", "Cost"],
     "rounds": [
       {
-        "question": "The brief is vague, but the deadline is moving. What do you do first?",
+        "question": "The tolerance stack fails at assembly, but the launch date is fixed. What do you do first?",
         "options": [
           {
-            "label": "Freeze the CAD and start machining.",
-            "scores": { "reliability": 0, "speed": 3, "cost": 1 },
-            "title": "Fast start, expensive finish.",
-            "feedback": "You gained visible speed, but unresolved acceptance criteria usually reappear as rework."
+            "label": "Loosen every tolerance on the bracket family.",
+            "scores": { "reliability": 0, "speed": 3, "cost": 2 },
+            "title": "Fast paperwork, fuzzy control.",
+            "feedback": "Blanket tolerance relaxation often hides the true driver and invites repeat failures at the line."
           },
           {
-            "label": "Define acceptance tests and build a quick risk rig.",
-            "scores": { "reliability": 3, "speed": 2, "cost": 3 },
-            "title": "Best systems move.",
-            "feedback": "A small experiment buys clarity before detail design locks the wrong assumptions in."
-          },
-          {
-            "label": "Add every sensor you might need.",
-            "scores": { "reliability": 1, "speed": 0, "cost": 0 },
-            "title": "More data is not always more certainty.",
-            "feedback": "Instrumentation helps only when each measurement answers a defined engineering question."
-          }
-        ]
-      },
-      {
-        "question": "The mechanism vibrates near the 15 Hz target. What is your next move?",
-        "options": [
-          {
-            "label": "Thicken every bracket.",
-            "scores": { "reliability": 1, "speed": 1, "cost": 0 },
-            "title": "The safe-looking answer has a mass penalty.",
-            "feedback": "Blanket stiffness can shift the problem, overload the drivetrain, and hide the actual excitation source."
-          },
-          {
-            "label": "Measure, isolate the mode, then rebalance and tune.",
+            "label": "Measure the stack, identify the critical contributor, and propose a targeted fix.",
             "scores": { "reliability": 3, "speed": 2, "cost": 2 },
-            "title": "Evidence before reinforcement.",
-            "feedback": "Separate structural, imbalance, and control effects so each fix has a reason and a verification test."
+            "title": "Evidence before ECO.",
+            "feedback": "A focused stack-up analysis gives production and quality a fix they can verify — not just hope for."
           },
           {
-            "label": "Lower the advertised target frequency.",
-            "scores": { "reliability": 0, "speed": 3, "cost": 3 },
-            "title": "The prototype survives; the requirement does not.",
-            "feedback": "Changing a requirement is valid only when the stakeholder accepts the product trade-off."
+            "label": "Ship as-is and sort at final inspection.",
+            "scores": { "reliability": 0, "speed": 3, "cost": 0 },
+            "title": "Speed today, rework tomorrow.",
+            "feedback": "Late sorting is expensive and rarely catches functional risk — only obvious fit issues."
           }
         ]
       },
       {
-        "question": "The prototype works. The client now wants hundreds. What changes first?",
+        "question": "Tooling lead time slips, but marketing locked the launch. What is your next move?",
         "options": [
           {
-            "label": "Repeat the one-off build exactly.",
-            "scores": { "reliability": 0, "speed": 2, "cost": 0 },
-            "title": "A prototype process is not a production process.",
-            "feedback": "Hidden craftsmanship and undocumented adjustments multiply variation as volume grows."
+            "label": "Freeze CAD and hope the mold catches up.",
+            "scores": { "reliability": 1, "speed": 2, "cost": 1 },
+            "title": "Frozen design, moving deadline.",
+            "feedback": "A freeze without supplier feedback can lock in moldability problems that surface too late."
           },
           {
-            "label": "Run DFM, add jigs, test points, and an acceptance checklist.",
+            "label": "Run a DFM review with tooling and propose a simplified interim geometry.",
             "scores": { "reliability": 3, "speed": 2, "cost": 3 },
-            "title": "You turned a build into a product line.",
-            "feedback": "Repeatability comes from designed interfaces, controlled variation, and a test that every unit can pass."
+            "title": "Design for what can ship.",
+            "feedback": "Interim solutions with clear ECO paths protect the date without pretending risk does not exist."
           },
           {
-            "label": "Send the drawings out and inspect at the end.",
-            "scores": { "reliability": 1, "speed": 3, "cost": 1 },
-            "title": "Supplier speed without process visibility.",
-            "feedback": "Late inspection catches failures after value has already been added. Critical characteristics need earlier control."
+            "label": "Reopen every part in the assembly for a full redesign.",
+            "scores": { "reliability": 2, "speed": 0, "cost": 0 },
+            "title": "Correct, but not on this calendar.",
+            "feedback": "Full redesign may be right technically but fails the schedule constraint — scope the minimum viable change."
+          }
+        ]
+      },
+      {
+        "question": "Marketing adds a feature after EBOM release. What changes first?",
+        "options": [
+          {
+            "label": "Update the model quietly and skip formal change control.",
+            "scores": { "reliability": 0, "speed": 3, "cost": 2 },
+            "title": "Invisible change, visible pain later.",
+            "feedback": "Undocumented changes break SAP, suppliers, and quality traceability — especially at volume."
+          },
+          {
+            "label": "Impact analysis, ECO, and aligned updates to CAD, BOM, and drawings.",
+            "scores": { "reliability": 3, "speed": 2, "cost": 3 },
+            "title": "Change control is part of the product.",
+            "feedback": "Formal ECO with cross-functional sign-off keeps production and suppliers on the same revision."
+          },
+          {
+            "label": "Reject the change outright without analysis.",
+            "scores": { "reliability": 1, "speed": 1, "cost": 1 },
+            "title": "Safe default, weak partnership.",
+            "feedback": "Sometimes the right answer is no — but it should follow impact data, not reflex."
           }
         ]
       }
     ],
     "results": {
       "high": {
-        "title": "Prototype saved — systems thinker.",
-        "text": "You balanced delivery speed with measurable reliability and cost control. That is the product-development loop I use on real hardware.",
+        "title": "Release saved — systems thinker.",
+        "text": "You balanced schedule pressure with manufacturability, data discipline, and cost awareness. That is the product-development loop I use on appliance programs at ELARABY.",
         "threshold": 23
       },
       "fast": {
-        "title": "Fast builder, exposed validation.",
-        "text": "You kept momentum high, but the system carries hidden technical debt. Add earlier tests and isolate the highest-cost failure mode."
+        "title": "Fast mover, exposed validation.",
+        "text": "You kept momentum high, but the program carries hidden technical debt. Add earlier stack-up checks and supplier DFM before locking EBOM."
       },
       "default": {
-        "title": "Prototype recovered — one more validation pass.",
-        "text": "The engineering direction is sound. Strengthen the acceptance test and manufacturing feedback loop before calling it delivered."
+        "title": "Release recovered — one more validation pass.",
+        "text": "The engineering direction is sound. Strengthen acceptance criteria and change control before calling it ready for production."
       }
     }
   }
