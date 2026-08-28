@@ -1,5 +1,6 @@
 import type { HeroContent, Profile } from "@/content/types";
-import { imageUrl } from "@/content/load";
+import { imageUrl, isPlaceholderImage } from "@/content/load";
+import { cn } from "@/lib/cn";
 
 interface HeroProps {
   profile: Profile;
@@ -7,6 +8,8 @@ interface HeroProps {
 }
 
 export function Hero({ profile, hero }: HeroProps) {
+  const portraitPending = isPlaceholderImage(profile.portrait);
+
   return (
     <section className="hero">
       <div className="hero-grid" aria-hidden="true" />
@@ -45,7 +48,9 @@ export function Hero({ profile, hero }: HeroProps) {
       >
         <div className="orbit orbit-one" aria-hidden="true" />
         <div className="orbit orbit-two" aria-hidden="true" />
-        <div className="portrait-frame">
+        <div
+          className={cn("portrait-frame", portraitPending && "media-pending")}
+        >
           <img
             src={imageUrl(profile.portrait)}
             width={900}
@@ -57,7 +62,10 @@ export function Hero({ profile, hero }: HeroProps) {
           <span className="portrait-code">{profile.portraitBadge}</span>
         </div>
         {hero.floatingNotes.map((note, i) => (
-          <div key={note.label} className={`floating-note note-${i === 0 ? "one" : "two"}`}>
+          <div
+            key={note.label}
+            className={`floating-note note-${i === 0 ? "one" : "two"}`}
+          >
             <span>{note.label}</span>
             <b>{note.value}</b>
           </div>

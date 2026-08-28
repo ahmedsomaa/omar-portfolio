@@ -1,7 +1,8 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import type { CompareSection } from "@/content/types";
-import { imageUrl } from "@/content/load";
+import { imageUrl, isPlaceholderImage } from "@/content/load";
 import { useReveal } from "@/hooks/useReveal";
+import { cn } from "@/lib/cn";
 
 export function CompareSlider({ compare }: { compare: CompareSection }) {
   const elRef = useReveal<HTMLDivElement>();
@@ -33,6 +34,10 @@ export function CompareSlider({ compare }: { compare: CompareSection }) {
     setPosition(((clientX - r.left) / r.width) * 100);
   };
 
+  const comparePending =
+    isPlaceholderImage(compare.builtImage) ||
+    isPlaceholderImage(compare.cadImage);
+
   return (
     <section className="sticks" id="compare-section">
       <p className="section-kicker reveal visible">{compare.kicker}</p>
@@ -40,7 +45,7 @@ export function CompareSlider({ compare }: { compare: CompareSection }) {
       <p className="cmp-intro reveal visible">{compare.intro}</p>
       <div
         ref={elRef}
-        className="cmp reveal"
+        className={cn("cmp reveal", comparePending && "media-pending")}
         id="compare"
         onPointerDown={(ev) => {
           draggingRef.current = true;

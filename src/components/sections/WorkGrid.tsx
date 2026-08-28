@@ -1,7 +1,8 @@
 import type { CSSProperties } from "react";
 import type { Project, WorkSection } from "@/content/types";
-import { imageUrl } from "@/content/load";
+import { imageUrl, isPlaceholderImage } from "@/content/load";
 import { Reveal } from "@/components/layout/Reveal";
+import { cn } from "@/lib/cn";
 import { ProjectLibrary } from "@/components/sections/ProjectLibrary";
 
 interface WorkGridProps {
@@ -40,7 +41,12 @@ export function WorkGrid({
               aria-label={`Open case study: ${project.title}`}
               onClick={() => onOpen(id)}
             >
-              <div className="project-media">
+              <div
+                className={cn(
+                  "project-media",
+                  isPlaceholderImage(project.image) && "media-pending",
+                )}
+              >
                 <img
                   src={imageUrl(project.image)}
                   width={1280}

@@ -9,8 +9,12 @@ interface GameDialogProps {
 
 type Scores = { reliability: number; speed: number; cost: number };
 
+const MAX_SCORE = 27;
+
 export function GameDialog({ challenge, open, onClose }: GameDialogProps) {
   const dialogRef = useRef<HTMLDialogElement>(null);
+  const closeRef = useRef<HTMLButtonElement>(null);
+  const returnFocusRef = useRef<HTMLElement | null>(null);
   const [roundIndex, setRoundIndex] = useState(0);
   const [scores, setScores] = useState<Scores>({
     reliability: 0,
@@ -19,15 +23,20 @@ export function GameDialog({ challenge, open, onClose }: GameDialogProps) {
   });
   const [showFeedback, setShowFeedback] = useState(false);
   const [feedback, setFeedback] = useState<{ title: string; text: string } | null>(null);
+  const [copyState, setCopyState] = useState<"idle" | "copied">("idle");
 
   const rounds = challenge.rounds;
   const currentRound = rounds[roundIndex];
+  const totalScore = scores.reliability + scores.speed + scores.cost;
+  const isFinalRound = roundIndex === rounds.length - 1;
+  const showShare = showFeedback && isFinalRound && feedback;
 
   const reset = useCallback(() => {
     setRoundIndex(0);
     setScores({ reliability: 0, speed: 0, cost: 0 });
     setShowFeedback(false);
     setFeedback(null);
+    setCopyState("idle");
   }, []);
 
   useEffect(() => {
@@ -35,9 +44,11 @@ export function GameDialog({ challenge, open, onClose }: GameDialogProps) {
     if (!dialog) return;
 
     if (open) {
+      returnFocusRef.current = document.activeElement as HTMLElement;
       if (!dialog.open) dialog.showModal();
       document.body.style.overflow = "hidden";
       reset();
+      requestAnimationFrame(() => closeRef.current?.focus());
     } else if (dialog.open) {
       dialog.close();
       document.body.style.overflow = "";
@@ -51,6 +62,7 @@ export function GameDialog({ challenge, open, onClose }: GameDialogProps) {
     const onCloseEvent = () => {
       document.body.style.overflow = "";
       onClose();
+      requestAnimationFrame(() => returnFocusRef.current?.focus());
     };
 
     dialog.addEventListener("close", onCloseEvent);
@@ -68,22 +80,25 @@ export function GameDialog({ challenge, open, onClose }: GameDialogProps) {
     return challenge.results.default;
   };
 
+  const shareLine = feedback
+    ? `${feedback.title.split("—")[0].trim()} — ${totalScore}/${MAX_SCORE}`
+    : "";
+
   const chooseOption = (optionIndex: number) => {
     const option = currentRound.options[optionIndex];
-    setScores((prev) => ({
-      reliability: prev.reliability + option.scores.reliability,
-      speed: prev.speed + option.scores.speed,
-      cost: prev.cost + option.scores.cost,
-    }));
+    const nextScores = {
+      reliability: scores.reliability + option.scores.reliability,
+      speed: scores.speed + option.scores.speed,
+      cost: scores.cost + option.scores.cost,
+    };
+
+    setScores(nextScores);
+    setCopyState("idle");
 
     const isFinal = roundIndex === rounds.length - 1;
     setFeedback(
       isFinal
-        ? resultSummary({
-            reliability: scores.reliability + option.scores.reliability,
-            speed: scores.speed + option.scores.speed,
-            cost: scores.cost + option.scores.cost,
-          })
+        ? resultSummary(nextScores)
         : { title: option.title, text: option.feedback },
     );
     setShowFeedback(true);
@@ -96,10 +111,27 @@ export function GameDialog({ challenge, open, onClose }: GameDialogProps) {
       setRoundIndex((i) => i + 1);
       setShowFeedback(false);
       setFeedback(null);
+      setCopyState("idle");
+    }
+  };
+
+  const copyShareLine = async () => {
+    if (!shareLine) return;
+    try {
+      await navigator.clipboard.writeText(shareLine);
+      setCopyState("copied");
+    } catch {
+      setCopyState("idle");
     }
   };
 
   const progress = ((roundIndex + 1) / rounds.length) * 100;
+
+  const handleClose = () => {
+    const dialog = dialogRef.current;
+    if (dialog?.open) dialog.close();
+    else onClose();
+  };
 
   return (
     <dialog
@@ -107,14 +139,15 @@ export function GameDialog({ challenge, open, onClose }: GameDialogProps) {
       className="game-dialog"
       id="game-dialog"
       onClick={(e) => {
-        if (e.target === dialogRef.current) onClose();
+        if (e.target === dialogRef.current) handleClose();
       }}
     >
       <button
+        ref={closeRef}
         className="game-dialog-close"
         type="button"
         aria-label="Close engineering challenge"
-        onClick={onClose}
+        onClick={handleClose}
       >
         ×
       </button>
@@ -165,6 +198,21 @@ export function GameDialog({ challenge, open, onClose }: GameDialogProps) {
             <div className="game-feedback" id="game-feedback">
               <h4>{feedback.title}</h4>
               <p>{feedback.text}</p>
+              {showShare && (
+                <div className="game-share">
+                  <span className="game-share-label">Share your result</span>
+                  <div className="game-share-row">
+                    <code className="game-share-text">{shareLine}</code>
+                    <button
+                      type="button"
+                      className="game-share-copy"
+                      onClick={copyShareLine}
+                    >
+                      {copyState === "copied" ? "Copied" : "Copy"}
+                    </button>
+                  </div>
+                </div>
+              )}
               <button type="button" onClick={onFeedbackNext}>
                 {roundIndex === rounds.length - 1
                   ? "Play again ↺"

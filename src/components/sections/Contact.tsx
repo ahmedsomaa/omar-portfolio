@@ -5,18 +5,33 @@ export function Contact({ contact, profile }: { contact: ContactSection; profile
     ? `mailto:${profile.email}?subject=Engineering%20Opportunity`
     : "#";
 
+  const hasEmail = Boolean(profile.email);
+  const hasWhatsApp = Boolean(profile.whatsapp);
+  const hasLinkedIn = Boolean(profile.linkedIn);
+  const hasCv = Boolean(profile.cvUrl);
+
   return (
     <section className="contact" id="contact">
       <p className="section-kicker">{contact.kicker}</p>
       <h2>{contact.title}</h2>
       <p>{contact.body}</p>
       <div className="contact-actions">
-        {profile.email && (
+        {hasEmail && (
           <a className="button light" href={emailHref}>
             {contact.emailLabel} <span>↗</span>
           </a>
         )}
-        {profile.whatsapp && (
+        {hasLinkedIn && (
+          <a
+            className={hasEmail ? "button outline-light" : "button light"}
+            href={profile.linkedIn}
+            target="_blank"
+            rel="noopener"
+          >
+            {contact.linkedInLabel} <span>↗</span>
+          </a>
+        )}
+        {hasWhatsApp && (
           <a
             className="button outline-light"
             href={profile.whatsapp}
@@ -26,17 +41,7 @@ export function Contact({ contact, profile }: { contact: ContactSection; profile
             {contact.whatsappLabel} <span>↗</span>
           </a>
         )}
-        {profile.linkedIn && (
-          <a
-            className="button outline-light"
-            href={profile.linkedIn}
-            target="_blank"
-            rel="noopener"
-          >
-            {contact.linkedInLabel} <span>↗</span>
-          </a>
-        )}
-        {profile.cvUrl && (
+        {hasCv && (
           <a
             className="button outline-light"
             href={profile.cvUrl}

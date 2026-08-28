@@ -1,6 +1,7 @@
 import type { Project } from "@/content/types";
-import { imageUrl } from "@/content/load";
+import { imageUrl, isPlaceholderImage } from "@/content/load";
 import { Reveal } from "@/components/layout/Reveal";
+import { cn } from "@/lib/cn";
 
 interface FeaturedCaseProps {
   project: Project;
@@ -9,9 +10,13 @@ interface FeaturedCaseProps {
 }
 
 export function FeaturedCase({ project, projectId, onOpen }: FeaturedCaseProps) {
+  const imagePending = isPlaceholderImage(project.image);
+
   return (
     <section className="signature" id="signature">
-      <Reveal className="signature-media">
+      <Reveal
+        className={cn("signature-media", imagePending && "media-pending")}
+      >
         <img
           src={imageUrl(project.image)}
           width={1600}

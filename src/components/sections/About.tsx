@@ -1,12 +1,17 @@
 import type { AboutSection } from "@/content/types";
-import { imageUrl } from "@/content/load";
+import { imageUrl, isPlaceholderImage } from "@/content/load";
 import { Reveal } from "@/components/layout/Reveal";
+import { cn } from "@/lib/cn";
 
 export function About({ about }: { about: AboutSection }) {
+  const imagePending = isPlaceholderImage(about.image);
+
   return (
     <section className="about" id="about">
       <Reveal className="about-card">
-        <div className="about-portrait">
+        <div
+          className={cn("about-portrait", imagePending && "media-pending")}
+        >
           <img
             src={imageUrl(about.image)}
             width={1125}

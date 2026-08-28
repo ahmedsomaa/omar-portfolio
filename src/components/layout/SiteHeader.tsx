@@ -1,14 +1,19 @@
 import { useEffect, useState } from "react";
 import type { NavLink, Profile } from "@/content/types";
+import { useActiveSection } from "@/hooks/useActiveSection";
 
 interface SiteHeaderProps {
   profile: Profile;
   nav: NavLink[];
 }
 
+const NAV_SECTION_IDS = ["work", "proof", "game", "about"];
+
 export function SiteHeader({ profile, nav }: SiteHeaderProps) {
   const [menuOpen, setMenuOpen] = useState(false);
+  const activeSection = useActiveSection(NAV_SECTION_IDS);
   const mainNav = nav.filter((n) => n.label !== "CV ↓");
+  const showCv = Boolean(profile.cvUrl);
 
   useEffect(() => {
     const header = document.querySelector(".site-header");
@@ -27,6 +32,11 @@ export function SiteHeader({ profile, nav }: SiteHeaderProps) {
 
   const cvHref = profile.cvUrl || "#contact";
 
+  const navClass = (href: string) => {
+    const id = href.replace("#", "");
+    return id && activeSection === id ? "fx-active" : undefined;
+  };
+
   return (
     <header className="site-header" id="top">
       <a className="brand" href="#top" aria-label={`${profile.name} — Home`}>
@@ -39,11 +49,24 @@ export function SiteHeader({ profile, nav }: SiteHeaderProps) {
 
       <nav className="desktop-nav" aria-label="Primary navigation">
         {mainNav.map((link) => (
-          <a key={link.href} href={link.href}>{link.label}</a>
+          <a
+            key={link.href}
+            href={link.href}
+            className={navClass(link.href)}
+          >
+            {link.label}
+          </a>
         ))}
-        <a className="nav-cv" href={cvHref} target={profile.cvUrl ? "_blank" : undefined} rel={profile.cvUrl ? "noopener" : undefined}>
-          CV <span aria-hidden="true">↓</span>
-        </a>
+        {showCv && (
+          <a
+            className="nav-cv"
+            href={cvHref}
+            target="_blank"
+            rel="noopener"
+          >
+            CV <span aria-hidden="true">↓</span>
+          </a>
+        )}
       </nav>
 
       <div className="header-actions">
@@ -69,20 +92,27 @@ export function SiteHeader({ profile, nav }: SiteHeaderProps) {
         aria-label="Mobile navigation"
       >
         {mainNav.map((link) => (
-          <a key={link.href} href={link.href} onClick={() => setMenuOpen(false)}>
+          <a
+            key={link.href}
+            href={link.href}
+            className={navClass(link.href)}
+            onClick={() => setMenuOpen(false)}
+          >
             {link.mobileLabel ?? link.label}
           </a>
         ))}
         <a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a>
-        <a
-          className="mobile-cv"
-          href={cvHref}
-          target={profile.cvUrl ? "_blank" : undefined}
-          rel={profile.cvUrl ? "noopener" : undefined}
-          onClick={() => setMenuOpen(false)}
-        >
-          Download CV ↓
-        </a>
+        {showCv && (
+          <a
+            className="mobile-cv"
+            href={cvHref}
+            target="_blank"
+            rel="noopener"
+            onClick={() => setMenuOpen(false)}
+          >
+            Download CV ↓
+          </a>
+        )}
       </nav>
     </header>
   );

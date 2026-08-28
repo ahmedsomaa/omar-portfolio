@@ -7,6 +7,9 @@ export function CursorGlow() {
   useEffect(() => {
     if (reduce) return;
 
+    const mobile = window.matchMedia("(max-width: 768px)");
+    if (mobile.matches) return;
+
     const glow = document.querySelector(".cursor-glow") as HTMLElement | null;
     if (!glow) return;
 

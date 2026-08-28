@@ -8,6 +8,8 @@ export function useSiteEnhancements() {
     if (reduce) return;
 
     const raf = window.requestAnimationFrame.bind(window);
+    const desktop = window.matchMedia("(min-width: 769px)");
+    const finePointer = window.matchMedia("(pointer: fine)");
 
     if ("IntersectionObserver" in window) {
       const sel =
@@ -30,7 +32,7 @@ export function useSiteEnhancements() {
       nodes.forEach((n) => io.observe(n));
     }
 
-    if (!window.matchMedia("(pointer: coarse)").matches) {
+    if (finePointer.matches && desktop.matches) {
       document.querySelectorAll(".project-card").forEach((card) => {
         const el = card as HTMLElement;
         let pending = false;
@@ -100,8 +102,8 @@ export function useSiteEnhancements() {
     }
 
     const strip = document.querySelector(".delivery-strip");
-    if (strip) {
-      const row = strip.querySelector("div");
+    if (strip && desktop.matches) {
+      const row = strip.querySelector(".delivery-clients") as HTMLElement | null;
       if (row && !row.dataset.fxDone) {
         row.dataset.fxDone = "1";
         const clone = row.cloneNode(true) as HTMLElement;

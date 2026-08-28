@@ -28,4 +28,4 @@ See **[src/content/README.md](src/content/README.md)** for a field-by-field guid
 ## Design
 
 - Dark-only green + purple palette
-- Fonts: Instrument Serif, DM Sans, DM Mono (Google Fonts)
+- Fonts: Instrument Serif, DM Sans, IBM Plex Mono (Google Fonts)

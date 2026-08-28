@@ -1,6 +1,6 @@
 # UX recommendations — Omar portfolio
 
-A designer review of the current site (React clone of [moustafasharaf.com](https://moustafasharaf.com/)) with suggested colors, fonts, and UX improvements. **Nothing here is implemented yet** — use this as a decision doc before changing CSS or `site.json`.
+A designer review of the current site (React clone of [moustafasharaf.com](https://moustafasharaf.com/)) with suggested colors, fonts, and UX improvements. **P0–P1 items from this doc are implemented in the codebase** (color tokens, typography, contact panel, motion, nav, dialogs). Use remaining P2–P3 items as a backlog.
 
 ---
 

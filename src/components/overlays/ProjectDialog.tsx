@@ -8,17 +8,33 @@ interface ProjectDialogProps {
   onClose: () => void;
 }
 
+const FOCUSABLE =
+  "a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex='-1'])";
+
+function pauseVideos(root: HTMLElement | null) {
+  if (!root) return;
+  root.querySelectorAll("video").forEach((video) => {
+    video.pause();
+    video.currentTime = 0;
+  });
+}
+
 export function ProjectDialog({ project, open, onClose }: ProjectDialogProps) {
   const dialogRef = useRef<HTMLDialogElement>(null);
+  const closeRef = useRef<HTMLButtonElement>(null);
+  const returnFocusRef = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
     const dialog = dialogRef.current;
     if (!dialog) return;
 
     if (open && project) {
+      returnFocusRef.current = document.activeElement as HTMLElement;
       if (!dialog.open) dialog.showModal();
       document.body.style.overflow = "hidden";
+      requestAnimationFrame(() => closeRef.current?.focus());
     } else if (dialog.open) {
+      pauseVideos(dialog);
       dialog.close();
       document.body.style.overflow = "";
     }
@@ -29,13 +45,52 @@ export function ProjectDialog({ project, open, onClose }: ProjectDialogProps) {
     if (!dialog) return;
 
     const onCloseEvent = () => {
+      pauseVideos(dialog);
       document.body.style.overflow = "";
       onClose();
+      requestAnimationFrame(() => returnFocusRef.current?.focus());
     };
 
     dialog.addEventListener("close", onCloseEvent);
     return () => dialog.removeEventListener("close", onCloseEvent);
   }, [onClose]);
+
+  useEffect(() => {
+    const dialog = dialogRef.current;
+    if (!dialog || !open) return;
+
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key !== "Tab") return;
+
+      const nodes = Array.from(
+        dialog.querySelectorAll<HTMLElement>(FOCUSABLE),
+      ).filter((el) => !el.hasAttribute("disabled"));
+
+      if (nodes.length === 0) return;
+
+      const first = nodes[0];
+      const last = nodes[nodes.length - 1];
+      const active = document.activeElement;
+
+      if (event.shiftKey && active === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && active === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    };
+
+    dialog.addEventListener("keydown", onKeyDown);
+    return () => dialog.removeEventListener("keydown", onKeyDown);
+  }, [open]);
+
+  const handleClose = () => {
+    const dialog = dialogRef.current;
+    pauseVideos(dialog);
+    if (dialog?.open) dialog.close();
+    else onClose();
+  };
 
   if (!project) return null;
 
@@ -48,14 +103,15 @@ export function ProjectDialog({ project, open, onClose }: ProjectDialogProps) {
       className="project-dialog"
       id="project-dialog"
       onClick={(e) => {
-        if (e.target === dialogRef.current) onClose();
+        if (e.target === dialogRef.current) handleClose();
       }}
     >
       <button
+        ref={closeRef}
         className="dialog-close"
         type="button"
         aria-label="Close project details"
-        onClick={onClose}
+        onClick={handleClose}
       >
         ×
       </button>

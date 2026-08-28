@@ -1,7 +1,8 @@
 import type { CSSProperties } from "react";
 import type { Project, WorkSection } from "@/content/types";
-import { imageUrl } from "@/content/load";
+import { imageUrl, isPlaceholderImage } from "@/content/load";
 import { Reveal } from "@/components/layout/Reveal";
+import { cn } from "@/lib/cn";
 
 interface ProjectLibraryProps {
   work: WorkSection;
@@ -33,7 +34,12 @@ export function ProjectLibrary({ work, projects, onOpen }: ProjectLibraryProps) 
               aria-label={`Open case study: ${project.title}`}
               onClick={() => onOpen(id)}
             >
-              <span className="project-mini-media">
+              <span
+                className={cn(
+                  "project-mini-media",
+                  isPlaceholderImage(project.image) && "media-pending",
+                )}
+              >
                 <img
                   src={imageUrl(project.image)}
                   width={478}
