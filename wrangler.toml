@@ -1,4 +1,7 @@
 # Cloudflare Pages — static Vite build output
-name = "omar-portfolio"
+# Git-connected Pages: leave the dashboard "Deploy command" EMPTY.
+# Pages publishes `pages_build_output_dir` after `bun run build` automatically.
+# Do NOT set Deploy command to `npx wrangler deploy` (that is for Workers).
+name = "omar-mech"
 compatibility_date = "2026-08-01"
 pages_build_output_dir = "dist"

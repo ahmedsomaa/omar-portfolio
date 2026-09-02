@@ -140,10 +140,13 @@ This site is a **static Vite build** (`dist/`). No server runtime required.
 |---------|--------|
 | Build command | `bun run build` |
 | Build output directory | `dist` |
+| **Deploy command** | **(leave empty)** |
 | `BUN_VERSION` | `1.3.13` |
 | `BUN_INSTALL_DEV` | `true` |
 
 If dependency install uses npm by mistake, set `SKIP_DEPENDENCY_INSTALL=true` and build command to `bun install && bun run build`.
+
+**Do not** set Deploy command to `npx wrangler deploy` — that is for Workers. Pages already uploads `dist` after a successful build. Local CLI deploy uses `bun run deploy` (`wrangler pages deploy`).
 
 ### CLI
 

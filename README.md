@@ -40,6 +40,7 @@ See **[src/content/README.md](src/content/README.md)** for a field-by-field guid
 | Framework preset | Vite |
 | Build command | `bun run build` |
 | Build output directory | `dist` |
+| **Deploy command** | **(leave empty)** |
 | Root directory | `/` (default) |
 
 4. Environment variables (Settings → Environment variables):
