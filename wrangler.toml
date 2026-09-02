@@ -1,8 +1,4 @@
-# Workers Static Assets — Cloudflare Git builds run `npx wrangler deploy`.
-# `pages_build_output_dir` is Pages-only and makes that command fail.
+# Cloudflare Pages reads this file. It requires `pages_build_output_dir`.
 name = "omar-mech"
 compatibility_date = "2026-08-01"
-
-[assets]
-directory = "./dist"
-not_found_handling = "single-page-application"
+pages_build_output_dir = "dist"

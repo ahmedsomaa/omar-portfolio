@@ -126,18 +126,19 @@ Full content guide: **[src/content/README.md](../src/content/README.md)**
 | Images don’t show | Paths under `public/images/` can be bare filenames; other folders need a leading `/` (e.g. `/designs/…`). |
 | `uv_interface_addresses` error on dev | Dev server is set to `host: "localhost"` in `vite.config.ts` to avoid this on some systems. |
 
-## Deploy — Cloudflare
+## Deploy — Cloudflare Pages
 
-Git-connected builds run `bun run build`, then **`npx wrangler deploy`**. Leave that deploy command as-is.
-
-[`wrangler.toml`](../wrangler.toml) serves `dist/` as Workers static assets (`[assets].directory`).
+Git-connected Pages installs (or the build script installs), then uploads `dist/`. Leave **Deploy command empty**.
 
 | Setting | Value |
 |---------|--------|
 | Build command | `bun run build` |
-| Deploy command | `npx wrangler deploy` |
+| Build output directory | `dist` |
+| Deploy command | *(empty)* |
 | `BUN_VERSION` | `1.3.13` |
 | `BUN_INSTALL_DEV` | `true` |
+
+[`wrangler.toml`](../wrangler.toml) must include `pages_build_output_dir = "dist"`.
 
 Local:
 

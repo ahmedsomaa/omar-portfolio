@@ -19,7 +19,7 @@ Dark-mode engineering portfolio for Omar Abu Qahf (Product Development · ELARAB
 | `bun run dev` | Dev server (port 8080) |
 | `bun run build` | Production build → `dist/` |
 | `bun run preview` | Preview production build |
-| `bun run deploy` | Build + deploy to Cloudflare (`wrangler deploy`) |
+| `bun run deploy` | Build + `wrangler pages deploy dist` |
 
 ## Edit your content
 
@@ -27,26 +27,28 @@ All copy, projects, stats, and links live in **`src/content/site.json`**.
 
 See **[src/content/README.md](src/content/README.md)** for a field-by-field guide. CAD renders live in `public/designs/`; resume and portrait are under `public/`.
 
-## Deploy (Cloudflare)
+## Deploy (Cloudflare Pages)
 
-Git builds run **build**, then **`npx wrangler deploy`**. Keep that deploy command. [`wrangler.toml`](wrangler.toml) points Wrangler at `dist/` via `[assets]`.
+This is a **Pages** project. Git builds must install deps, then emit `dist/`. Do **not** set a Deploy command.
 
 | Setting | Value |
 |---------|--------|
+| Framework preset | Vite |
 | Build command | `bun run build` |
-| Deploy command | `npx wrangler deploy` |
+| Build output directory | `dist` |
+| Deploy command | *(empty — do not use `npx wrangler deploy`)* |
 | `BUN_VERSION` | `1.3.13` |
 | `BUN_INSTALL_DEV` | `true` |
 
-Do not use `pages_build_output_dir` in Wrangler — that makes `wrangler deploy` fail with “Missing entry-point”.
+[`wrangler.toml`](wrangler.toml) sets `pages_build_output_dir = "dist"` so Pages accepts the config file.
+
+`bun run build` runs `bun install --frozen-lockfile`, TypeScript, then Vite — so `tsc` is available even if Pages skips its own install step.
 
 Local:
 
 ```bash
 bun run deploy
 ```
-
-Requires `wrangler login` once. Project name is `omar-mech`.
 
 ## Design
 
