@@ -126,35 +126,24 @@ Full content guide: **[src/content/README.md](../src/content/README.md)**
 | Images don’t show | Paths under `public/images/` can be bare filenames; other folders need a leading `/` (e.g. `/designs/…`). |
 | `uv_interface_addresses` error on dev | Dev server is set to `host: "localhost"` in `vite.config.ts` to avoid this on some systems. |
 
-## Deploy — Cloudflare Pages
+## Deploy — Cloudflare
 
-This site is a **static Vite build** (`dist/`). No server runtime required.
+Git-connected builds run `bun run build`, then **`npx wrangler deploy`**. Leave that deploy command as-is.
 
-### Dashboard (Git-connected)
-
-1. Push to GitHub.
-2. Cloudflare → **Workers & Pages** → create a Pages project from the repo.
-3. Settings:
+[`wrangler.toml`](../wrangler.toml) serves `dist/` as Workers static assets (`[assets].directory`).
 
 | Setting | Value |
 |---------|--------|
 | Build command | `bun run build` |
-| Build output directory | `dist` |
-| **Deploy command** | **(leave empty)** |
+| Deploy command | `npx wrangler deploy` |
 | `BUN_VERSION` | `1.3.13` |
 | `BUN_INSTALL_DEV` | `true` |
 
-If dependency install uses npm by mistake, set `SKIP_DEPENDENCY_INSTALL=true` and build command to `bun install && bun run build`.
-
-**Do not** set Deploy command to `npx wrangler deploy` — that is for Workers. Pages already uploads `dist` after a successful build. Local CLI deploy uses `bun run deploy` (`wrangler pages deploy`).
-
-### CLI
+Local:
 
 ```bash
 bun run deploy
 ```
-
-Uses Wrangler against [`wrangler.toml`](../wrangler.toml). Run `bunx wrangler login` first if needed.
 
 ### Related docs
 
