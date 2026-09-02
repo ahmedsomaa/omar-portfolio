@@ -21,21 +21,24 @@ Save the file — the dev server reloads automatically.
 
 ### Images
 
-1. Add photos to `public/images/`
-2. Update the filename in `site.json` (e.g. `profile.portrait`, `projects.sensory.image`)
+1. Add photos to `public/images/` or `public/designs/`
+2. Update the filename in `site.json` (e.g. `profile.portrait`, `projects.*.image`)
+
+- Files in `public/images/` can use a bare filename (e.g. `"hero-portrait.jpg"`).
+- Files elsewhere under `public/` need a leading `/` (e.g. `"/omar-portrait.jpg"`, `"/designs/FULL DRUM DESIGN.png"`).
 
 Placeholder files use `.svg` — replace with `.jpg` or `.png` and update the path in JSON.
 
 **Key images:**
 
-- `hero-portrait.svg` — main portrait
-- `about.svg` — about section photo
-- `compare-cad.svg` / `compare-built.svg` — CAD vs built slider
+- `/omar-portrait.jpg` — hero portrait
+- `about.svg` (or a real photo) — about section
+- `/designs/…` — project CAD renders and compare slider
 - Each project's `image` and `gallery` entries
 
 ### CV
 
-Set `profile.cvUrl` to your PDF path, e.g. `/cv/Omar_Ismail_CV.pdf` (put the PDF in `public/cv/`).
+Set `profile.cvUrl` to your PDF path, e.g. `/Omar_Abu_Qahf___Resume.pdf` (file in `public/`).
 
 ### Optional fields
 

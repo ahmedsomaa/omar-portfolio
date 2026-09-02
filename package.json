@@ -8,7 +8,9 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "oxlint",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "pages:dev": "bun run build && bunx wrangler pages dev dist",
+    "deploy": "bun run build && bunx wrangler pages deploy dist"
   },
   "dependencies": {
     "clsx": "^2.1.1",

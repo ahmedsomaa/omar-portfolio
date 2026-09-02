@@ -84,7 +84,11 @@ Runs oxlint on the codebase.
 omar-portfolio/
 ├── docs/                    # Design notes (UX, getting started)
 ├── public/
-│   └── images/              # Photos — paths referenced in site.json
+│   ├── designs/             # CAD renders — paths in site.json
+│   ├── images/              # Legacy / extra images
+│   ├── omar-portrait.jpg    # Hero portrait
+│   ├── Omar_Abu_Qahf___Resume.pdf
+│   └── _headers             # Cloudflare Pages cache headers
 ├── src/
 │   ├── content/
 │   │   ├── site.json        # ← Main content file (edit this)
@@ -94,6 +98,8 @@ omar-portfolio/
 │   └── App.tsx              # Page assembly
 ├── index.html               # Fonts, meta, root mount
 ├── package.json
+├── wrangler.toml            # Cloudflare Pages output dir
+├── .bun-version             # Bun pin for CI / Pages
 └── vite.config.ts           # Dev server port 8080
 ```
 
@@ -105,8 +111,8 @@ omar-portfolio/
 
 For photos:
 
-1. Add a file to **`public/images/`** (e.g. `hero-portrait.jpg`).
-2. Set the path in JSON, e.g. `"portrait": "hero-portrait.jpg"`.
+1. Add a file to **`public/`** or **`public/designs/`** (e.g. `omar-portrait.jpg`).
+2. Set the path in JSON, e.g. `"portrait": "/omar-portrait.jpg"` (leading `/` for files outside `public/images/`).
 
 Full content guide: **[src/content/README.md](../src/content/README.md)**
 
@@ -117,16 +123,38 @@ Full content guide: **[src/content/README.md](../src/content/README.md)**
 | `bun: command not found` | Install Bun or use `npm install` + `npm run dev`. |
 | Port 8080 in use | Stop the other process or change `server.port` in `vite.config.ts`. |
 | Blank page after edit | Check the terminal for JSON syntax errors in `site.json` (missing comma, etc.). |
-| Images don’t show | Paths in JSON are filenames under `public/images/`, not full URLs (unless you use `http…`). |
+| Images don’t show | Paths under `public/images/` can be bare filenames; other folders need a leading `/` (e.g. `/designs/…`). |
 | `uv_interface_addresses` error on dev | Dev server is set to `host: "localhost"` in `vite.config.ts` to avoid this on some systems. |
 
-## Deploy
+## Deploy — Cloudflare Pages
 
-After `bun run build`, upload the contents of **`dist/`** to any static host (Netlify, Cloudflare Pages, Vercel, GitHub Pages, etc.). No server-side runtime required.
+This site is a **static Vite build** (`dist/`). No server runtime required.
 
-Point the host’s publish directory to **`dist`** and use a single-page-app fallback to `index.html` if your host requires it for client-side routing (this site is one page with hash links only, so defaults usually work).
+### Dashboard (Git-connected)
 
-## Related docs
+1. Push to GitHub.
+2. Cloudflare → **Workers & Pages** → create a Pages project from the repo.
+3. Settings:
+
+| Setting | Value |
+|---------|--------|
+| Build command | `bun run build` |
+| Build output directory | `dist` |
+| `BUN_VERSION` | `1.3.13` |
+| `BUN_INSTALL_DEV` | `true` |
+
+If dependency install uses npm by mistake, set `SKIP_DEPENDENCY_INSTALL=true` and build command to `bun install && bun run build`.
+
+### CLI
+
+```bash
+bun run deploy
+```
+
+Uses Wrangler against [`wrangler.toml`](../wrangler.toml). Run `bunx wrangler login` first if needed.
+
+### Related docs
 
 - [Content editing](../src/content/README.md) — `site.json` fields
 - [UX recommendations](./ux-recommendations.md) — colors, fonts, section ideas for Omar
+- [README](../README.md) — full Cloudflare Pages table

@@ -7,8 +7,9 @@ export function loadSite(): SiteContent {
 
 export function imageUrl(filename: string): string {
   if (!filename) return "";
-  if (filename.startsWith("http") || filename.startsWith("/")) return filename;
-  return `/images/${filename}`;
+  if (filename.startsWith("http")) return filename;
+  if (filename.startsWith("/")) return encodeURI(filename);
+  return encodeURI(`/images/${filename}`);
 }
 
 /** SVG placeholders in public/images should get the pending-media treatment. */
